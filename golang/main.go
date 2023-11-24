@@ -7,17 +7,18 @@ package main
 //cada diretorio deve ter no maximo um pacote sendo usado
 import (
 	"fmt"
+	"main/selection" //perceba que os
 )
 
 func main() {
 
-	var sel selectionSort
+	var sel selection.SelectionSort
 	slice := []int{4, 2, 7, 1, 5, 6, 5, 234, -2}
 
 	fmt.Println("Slice original antes:", slice)
 
 	// Chamar o método com a slice
-	sel.sortAscending(slice)
+	sel.SortAscending(slice)
 
 	fmt.Println("Slice original depois:", slice)
 }

@@ -1,4 +1,4 @@
-package main
+package selection
 
 /**
 	=> min, max => O(n²)
@@ -9,11 +9,11 @@ package main
   -repetindo esse procedimento conseguimos ordenar um vetor com a estratégia da seleção
 */
 
-type selectionSort struct {
+type SelectionSort struct {
 	slice_values *[]int
 }
 
-func (s *selectionSort) sortAscending(slice []int) {
+func (s *SelectionSort) SortAscending(slice []int) {
 
 	//atribuicao de cada de uma slice na outra, como usa-se &, entao o valor atribuido a s.slice_values eh o endereco de memorio do slice. referenciacao.
 	s.slice_values = &slice //{4, 2, 7, 1, 5, 6, 5, 234, -2} o endereco do slice da main.go eh multivalorado, ou seja, o slice do parametro dessa funcao possui o mesmo endereco da main.go
