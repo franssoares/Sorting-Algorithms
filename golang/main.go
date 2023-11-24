@@ -6,7 +6,7 @@ package main
 // Cada diretorio deve ter no maximo um pacote sendo usado
 import (
 	"fmt"
-	"main/selection" // Perceba que o package main esta no repositorio recorrente, e selection eh o package acessado
+	"golang/selection" // Perceba que o package main esta no repositorio recorrente, e selection eh o package acessado
 )
 
 func main() {
