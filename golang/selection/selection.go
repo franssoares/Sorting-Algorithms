@@ -15,8 +15,8 @@ type SelectionSort struct {
 
 func (s *SelectionSort) SortAscending(slice []int) {
 
-	//atribuicao de cada de uma slice na outra, como usa-se &, entao o valor atribuido a s.slice_values eh o endereco de memorio do slice. referenciacao.
-	s.slice_values = &slice //{4, 2, 7, 1, 5, 6, 5, 234, -2} o endereco do slice da main.go eh multivalorado, ou seja, o slice do parametro dessa funcao possui o mesmo endereco da main.go
+	// Atribuicao de cada de uma slice na outra, como usa-se &, entao o valor atribuido a s.slice_values eh o endereco de memorio do slice. referenciacao.
+	s.slice_values = &slice // {4, 2, 7, 1, 5, 6, 5, 234, -2} o endereco do slice da main.go eh multivalorado, ou seja, o slice do parametro dessa funcao possui o mesmo endereco da main.go
 
 	var min int
 
@@ -32,6 +32,6 @@ func (s *SelectionSort) SortAscending(slice []int) {
 			}
 		}
 
-		(*s.slice_values)[i], (*s.slice_values)[min] = (*s.slice_values)[min], (*s.slice_values)[i] //troca multipla de valores sem a necessidade de um terceira variavel temporaria
+		(*s.slice_values)[i], (*s.slice_values)[min] = (*s.slice_values)[min], (*s.slice_values)[i] // Troca multipla de valores sem a necessidade de um terceira variavel temporaria
 	}
 }
