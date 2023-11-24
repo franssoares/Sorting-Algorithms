@@ -20,13 +20,15 @@ func (s *SelectionSort) SortAscending(slice []int) {
 
 	var min int
 
-	for i := 0; i < len(*s.slice_values)-1; i++ {
+	n := len(*s.slice_values)
+
+	for i := 0; i < n-1; i++ {
 
 		min = i
 
-		for j := i + 1; j < len(*s.slice_values); j++ {
+		for j := i + 1; j < n; j++ {
 
-			if (*s.slice_values)[i] > (*s.slice_values)[j] {
+			if (*s.slice_values)[min] > (*s.slice_values)[j] {
 
 				min = j // atualizar o index onde tem o valor menor da comparacao
 			}
