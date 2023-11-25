@@ -1,4 +1,4 @@
-package selection
+package bubble
 
 import (
 	"fmt"
@@ -6,14 +6,14 @@ import (
 	"testing"
 )
 
-// O comando eh => go test -run TestSortAscending, go test -run selection_test
+// O comando eh => go test -run TestSortAscending, go test -run bubble_test.go
 // Ver mais conteudo -> go test -v
 func TestSortAscending(t *testing.T) {
 
-	var sel SelectionSort
+	var bul Bubblesort
 
 	// Imprime o método de ordenação
-	fmt.Println("[Selection Sort]")
+	fmt.Println("[Bubble Sort]")
 
 	// Caso de teste
 	input := []int{5, 2, 9, 1, 5, 6, 3, 8, -1, 0}
@@ -23,7 +23,7 @@ func TestSortAscending(t *testing.T) {
 	fmt.Println("Vetor antes da ordenação:", input)
 
 	// Chama o método de ordenação
-	sel.SortAscending(input)
+	bul.SortAscending(input)
 
 	// Verifica se a fatia foi ordenada corretamente
 	if !reflect.DeepEqual(input, expected) {

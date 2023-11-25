@@ -30,7 +30,7 @@ func (s *SelectionSort) SortAscending(slice []int) {
 
 			if (*s.slice_values)[min] > (*s.slice_values)[j] {
 
-				min = j // atualizar o index onde tem o valor menor da comparacao
+				min = j // captura o index onde tem o valor menor da comparacao
 			}
 		}
 

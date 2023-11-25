@@ -1,5 +1,5 @@
 # Métodos de Ordenação
-------------
+---------------------------------
 Existem vários métodos de ordenação em algoritmos de computação, cada um com suas próprias características e eficiências.
 
 **Bubble Sort**
