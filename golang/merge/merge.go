@@ -10,7 +10,7 @@ func (mer *MergeSort) SortAscending(slice []int) {
 	/*
 	* vetor a ser ordenado, primeiro indice do vetor,
 	* ultimo incice do vetor
-	 */
+	**/
 
 	n := len(slice)
 
@@ -32,7 +32,7 @@ func (mer *MergeSort) MergeSortRec(slice []int, left int, right int) {
 		* Recursao:
 		* A pilha de chamadas (call stack) segue a abordagem de
 		* última entrada, primeira saída (Last In, First Out - LIFO)
-		 */
+		**/
 
 		// Divisão da Metade Esquerda
 		mer.MergeSortRec((*mer.slice_values), left, middle)
@@ -47,6 +47,11 @@ func (mer *MergeSort) MergeSortRec(slice []int, left int, right int) {
 
 // Conquistando a morena
 func (mer *MergeSort) MergeRec(slice []int, left int, middle int, right int) {
+
+	/*
+	* Para nao complicar a nossa vida não tomarei mer.slice_values = &slice
+	* Ira ver slice
+	**/
 
 	n1 := middle - left + 1
 	n2 := right - middle

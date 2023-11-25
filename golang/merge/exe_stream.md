@@ -12,7 +12,7 @@ Na pilha de chamadas, cada chamada de função cria um novo bloco de memória ch
 
 <h1 align="center"><img src="https://res.cloudinary.com/media-resource/image/upload/v1563577182/babscraig.com/call_stack_u2vvsi.jpg"/></h1>
 
------
+--------
 
 # Fluxo de Execução (MergeSort)
 
