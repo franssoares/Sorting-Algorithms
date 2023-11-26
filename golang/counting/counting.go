@@ -11,21 +11,21 @@ func (cou *Counting) SortAscending(slice []int) {
 }
 
 func (cou *Counting) CountingSort(slice []int) {
-
 	// Passagem
 	cou.slice_values = &slice
 
 	// Capturando min e max
 	min, max := findMinMax((*cou.slice_values))
-	fmt.Println("Index min e max: ", min, max)
+	fmt.Println("Índice min e max: ", min, max)
 
 	// Criando slice auxiliar
-	interval := slice[max] - slice[min] + 1
-	aux_slice := make([]int, interval)
+	offset := -min // "offset" representa o deslocamento necessário para lidar com valores negativos
+	intervalo := max - min + 1
+	aux_slice := make([]int, intervalo)
 	fmt.Println("Slice auxiliar criada: ", aux_slice)
 
 	// Iterando o vetor auxiliar
-	elementsFreq(slice, aux_slice)
+	elementsFreq(slice, aux_slice, offset)
 	fmt.Println("Slice auxiliar contada: ", aux_slice)
 
 	// Soma acumulativa
@@ -33,7 +33,7 @@ func (cou *Counting) CountingSort(slice []int) {
 	fmt.Println("Slice auxiliar acumulado: ", aux_slice)
 
 	// Ordenando o slice original
-	sort(slice, aux_slice)
+	sort(slice, aux_slice, offset)
 	fmt.Println("Slice ordenado: ", slice)
 }
 
@@ -41,39 +41,38 @@ func (cou *Counting) CountingSort(slice []int) {
 func findMinMax(slice []int) (int, int) {
 
 	n := len(slice)
-	fmt.Println("Tam da slice original: ", n)
+	fmt.Println("Tamanho da slice original: ", n)
+
 	minSlice := slice[0]
 	maxSlice := slice[0]
-	var min int
-	var max int
 
 	// Encontrando os maiores e menores valores da slice
 	for i := 0; i < n; i++ {
 
 		if minSlice > slice[i] {
-			min = i
+
 			minSlice = slice[i]
-		}
 
+		}
 		if maxSlice < slice[i] {
-			max = i
-			maxSlice = slice[i]
-		}
 
+			maxSlice = slice[i]
+
+		}
 	}
 
-	fmt.Println("Valores min e max: ", slice[min], slice[max])
+	fmt.Println("Valores min e max: ", minSlice, maxSlice)
 
-	return min, max
+	return minSlice, maxSlice
 }
 
-func elementsFreq(slice []int, aux_slice []int) {
+func elementsFreq(slice []int, aux_slice []int, offset int) {
 
 	n := len(slice)
 
 	for i := 0; i < n; i++ {
 
-		aux_slice[slice[i]]++
+		aux_slice[slice[i]+offset]++
 
 	}
 }
@@ -83,11 +82,14 @@ func commulativeSum(aux_slice []int) {
 	n := len(aux_slice)
 
 	for i := 0; i < n-1; i++ {
+
 		aux_slice[i+1] = aux_slice[i+1] + aux_slice[i]
+
 	}
 }
 
-func sort(slice []int, auxSlice []int) {
+func sort(slice []int, auxSlice []int, offset int) {
+
 	n := len(slice)
 	fmt.Println(n)
 
@@ -95,12 +97,16 @@ func sort(slice []int, auxSlice []int) {
 	fmt.Println("sortSlice criada: ", sortSlice)
 
 	for i := n - 1; i >= 0; i-- {
-		sortSlice[auxSlice[slice[i]]-1] = slice[i]
-		auxSlice[slice[i]]--
+
+		sortSlice[auxSlice[slice[i]+offset]-1] = slice[i]
+		auxSlice[slice[i]+offset]--
+
 	}
 
 	// Copiar os elementos ordenados de volta para o slice original
 	for i := 0; i < n; i++ {
+
 		slice[i] = sortSlice[i]
+
 	}
 }

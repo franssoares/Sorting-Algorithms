@@ -16,8 +16,8 @@ func TestSortAscending(t *testing.T) {
 	fmt.Println("[Counting Sort]")
 
 	// Caso de teste
-	input := []int{5, 2, 9, 1, 5, 6, 3, 8, 1, 0}
-	expected := []int{0, 1, 1, 2, 3, 5, 5, 6, 8, 9}
+	input := []int{-5, 2, 9, 1, 5, 6, 3, 8, 1, 0}
+	expected := []int{-5, 0, 1, 1, 2, 3, 5, 6, 8, 9}
 
 	// Imprime o vetor antes a ordenação
 	fmt.Println("Vetor antes da ordenação:", input)
