@@ -1,4 +1,4 @@
-// Em Go, um programa executável deve sempre ter um pacote chamado main
+// Em Golang, um programa executável deve sempre ter um pacote chamado main
 package main
 
 // O import eh usado para chamar bibliotecas ou pacotes interno ou externo, NAMESPACE assim como o uso do std::cin() em c++, em go se usa nome_do_pacote.metodo()
